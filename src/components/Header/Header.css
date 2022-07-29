@@ -1,0 +1,14 @@
+.dark-mode-container {
+    display: flex;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--light-mode-text);
+}
+.dark-mode-container > svg {
+    width: 14px;
+}
+.dark-mode-container > p {
+    margin-left: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}

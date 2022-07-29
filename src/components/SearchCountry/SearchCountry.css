@@ -1,0 +1,35 @@
+.search-input-container {
+    width: 90%;
+    margin-top: 1.5em;
+    margin-bottom: 3em;
+    margin: 0 auto;
+}
+.search-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    background: var(--white-elements);
+    box-shadow: 0px 3px 5px -3px rgba(0, 0, 0, 0.1);
+    padding: 0.5em 0;
+    border-radius: 10px;
+}
+.search-input > svg {
+    width: 20px;
+    margin: 0 2em;
+}
+.search-input > svg > path {
+    fill: var(--light-mode-input);
+}
+input {
+    width: 100%;
+    border: none;
+    background: var(--white-elements);
+}
+input::placeholder {
+    color: var(--light-mode-input);
+}
+input:focus {
+    outline: none;
+}
