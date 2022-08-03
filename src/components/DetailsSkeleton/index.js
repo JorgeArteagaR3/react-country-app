@@ -8,10 +8,10 @@ const DetailsSkeleton = () => {
             <div className="country-info">
                 <div className="img-skeleton "></div>
                 <article className="country-details">
+                    <h2 className="country-name">
+                        <div className="country-name-skeleton borders"></div>
+                    </h2>
                     <div className="main-details">
-                        <h2 className="country-name">
-                            <div className="country-name-skeleton borders"></div>
-                        </h2>
                         <p className="country-detail">
                             Native name:
                             <div className="country-detail-skeleton borders"></div>
@@ -62,9 +62,9 @@ const DetailsSkeleton = () => {
                     <div className="near-countries">
                         <p className="country-detail">Border Countries:</p>
                         <div className="border-countries">
-                            <div className="country-detail-skeleton borders"></div>
-                            <div className="country-detail-skeleton borders"></div>
-                            <div className="country-detail-skeleton borders"></div>
+                            <div className="border-country-skeleton"></div>
+                            <div className="border-country-skeleton"></div>
+                            <div className="border-country-skeleton"></div>
                         </div>
                     </div>
                 </article>

@@ -7,7 +7,7 @@ const Results = ({ countries }) => {
             {countries.map((nation) => {
                 return (
                     <Country
-                        key={nation.population}
+                        key={nation.name.common}
                         img={nation.flags.png}
                         population={nation.population}
                         region={nation.region}

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./RegionSelect.css";
 import { Results } from "../Results/index";
 import { SearchCountry } from "../SearchCountry/index";
+import { CountrySkeleton } from "../CountrySkeleton";
 const RegionSelect = () => {
     const regions = ["Africa", "America", "Asia", "Europe", "Oceania"];
     const [region, setRegion] = useState("");
@@ -16,15 +17,27 @@ const RegionSelect = () => {
         requestCountriesByName();
     }, [name]);
 
+    useEffect(() => {
+        requestCountries();
+    }, []);
+    async function requestCountries() {
+        setLoading(true);
+        const res = await fetch("https://restcountries.com/v3.1/lang/eng");
+        const data = await res.json();
+        setCountries(data);
+        setLoading(false);
+    }
     async function requestCountriesByName() {
         if (name.length < 2) return;
+        setLoading(true);
         const res = await fetch(`https://restcountries.com/v3.1/name/${name}`);
         const data = await res.json();
-
         if (res.status === 404) {
+            setLoading(false);
             setCountries([]);
         } else {
             setCountries(data);
+            setLoading(false);
         }
     }
 
@@ -60,11 +73,29 @@ const RegionSelect = () => {
                 </select>
             </article>
             <div className="country-container">
-                {countries.length ? (
-                    <Results countries={countries} />
-                ) : (
-                    <p className="error">No matches found</p>
+                {loading && (
+                    <>
+                        <CountrySkeleton />
+                        <CountrySkeleton />
+                        <CountrySkeleton />
+                        <CountrySkeleton />
+                        <CountrySkeleton />
+                        <CountrySkeleton />
+                        <CountrySkeleton />
+                        <CountrySkeleton />
+                        <CountrySkeleton />
+                        <CountrySkeleton />
+                        <CountrySkeleton />
+                        <CountrySkeleton />
+                        <CountrySkeleton />
+                        <CountrySkeleton />
+                        <CountrySkeleton />
+                    </>
                 )}
+                {!loading && countries.length > 0 && (
+                    <Results countries={countries} />
+                )}
+                {!loading && countries.length === 0 && <p>No matches found</p>}
             </div>
         </div>
     );

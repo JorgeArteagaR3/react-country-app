@@ -3,6 +3,8 @@
     grid-template-columns: 1fr;
     justify-items: center;
     gap: 20px;
+    width: 90%;
+    margin: 0 auto;
 }
 .country {
     width: 250px;
@@ -39,4 +41,17 @@ a {
 .single-country {
     padding-left: 2.1em;
     padding: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 1024px) {
+    .country-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media only screen and (min-width: 1440px) {
+    .country-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }

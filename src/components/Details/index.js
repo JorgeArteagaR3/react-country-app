@@ -36,8 +36,8 @@ const Details = () => {
                     src={country.flags.png}
                 />
                 <article className="country-details">
+                    <h2 className="country-name">{country.name.common}</h2>
                     <div className="main-details">
-                        <h2 className="country-name">{country.name.common}</h2>
                         <p className="country-detail">
                             Native name: <span>{country.name.official}</span>
                         </p>
