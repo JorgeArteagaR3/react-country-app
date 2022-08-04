@@ -2,20 +2,20 @@
     width: 350px;
     height: 183px;
     background-color: var(--light-mode-input);
-    animation: loading-skeleton infinite 1.5s;
+    animation: loadingskeleton infinite 1.5s;
 }
 .country-name-skeleton {
     height: 32px;
     width: 50%;
     background-color: var(--light-mode-input);
-    animation: loading-skeleton infinite 1.5s;
+    animation: loadingskeleton infinite 1.5s;
 }
 .country-detail-skeleton {
     height: 16px;
     width: 30%;
     background-color: var(--light-mode-input);
     display: inline-block;
-    animation: loading-skeleton infinite 1.5s;
+    animation: loadingskeleton infinite 1.5s;
 }
 .borders {
     border-radius: 10px;
@@ -36,9 +36,9 @@
     height: 31px;
     border-radius: 10px;
     width: 30%;
-    animation: loading-skeleton infinite 1.5s;
+    animation: loadingskeleton infinite 1.5s;
 }
-@keyframes loading-skeleton {
+@keyframes loadingskeleton {
     0%,
     100% {
         opacity: 70%;
