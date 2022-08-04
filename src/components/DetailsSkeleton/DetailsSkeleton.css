@@ -38,15 +38,7 @@
     width: 30%;
     animation: loadingskeleton infinite 1.5s;
 }
-@keyframes loadingskeleton {
-    0%,
-    100% {
-        opacity: 70%;
-    }
-    50% {
-        opacity: 10%;
-    }
-}
+
 @media only screen and (min-width: 1024px) {
     .img-skeleton {
         width: 480px;
