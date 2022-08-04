@@ -1,5 +1,5 @@
 .skeleton {
-    background-color: var(--light-mode-input);
+    background-color: var(--light-mode-text);
     animation: loading-skeleton infinite 1.5s;
 }
 .skeleton-name {
@@ -13,15 +13,7 @@
     display: inline-block;
     border-radius: 6px;
 }
-@keyframes loading-skeleton {
-    0%,
-    100% {
-        opacity: 70%;
-    }
-    50% {
-        opacity: 10%;
-    }
-}
+
 @media only screen and (min-width: 1440px) {
     .skeleton-detail {
         height: 18px;
