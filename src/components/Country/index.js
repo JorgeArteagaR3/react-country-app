@@ -2,9 +2,12 @@ import React from "react";
 import "./Country.css";
 import { Link } from "react-router-dom";
 import { numberWithCommas } from "../../services/numberWithCommas";
-const Country = ({ img, population, region, capital, name }) => {
+const Country = ({ img, population, region, capital, name, darkMode }) => {
     return (
-        <Link to={`/country/${name}`} className="country">
+        <Link
+            to={`/country/${name}`}
+            className={darkMode ? "country dark-light" : "country"}
+        >
             <img className="country-img" src={img} alt={name} />
             <div className="single-country">
                 <h2 className="country-main-name">{name}</h2>

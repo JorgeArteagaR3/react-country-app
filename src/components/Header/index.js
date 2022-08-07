@@ -1,11 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ darkMode, setDarkMode }) => {
     return (
-        <header>
+        <header className={darkMode && "dark-light"}>
             <h1>Where in the world?</h1>
-            <a href="/" className="dark-mode-container">
+            <Link
+                to={"/"}
+                className={
+                    darkMode
+                        ? "dark-mode-container dark-text"
+                        : "dark-mode-container"
+                }
+                onClick={() => {
+                    setDarkMode(!darkMode);
+                }}
+            >
                 <svg
                     viewBox="0 0 33 33"
                     fill="none"
@@ -22,7 +33,7 @@ const Header = () => {
                 </svg>
 
                 <p>Dark Mode</p>
-            </a>
+            </Link>
         </header>
     );
 };

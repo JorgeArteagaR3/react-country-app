@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { BackBtn } from "../BackBtn";
 import { numberWithCommas } from "../../services/numberWithCommas";
 import { DetailsSkeleton } from "../DetailsSkeleton";
-const Details = () => {
+const Details = ({ darkMode }) => {
     const { name } = useParams();
     const [country, setCountry] = useState(null);
 
@@ -28,14 +28,20 @@ const Details = () => {
     const language = lang.toString().replaceAll(",", ", ");
     return (
         <>
-            <BackBtn></BackBtn>
-            <div className="country-info">
+            <BackBtn darkMode={darkMode}></BackBtn>
+            <div className={darkMode ? "country-info dark" : "country-info"}>
                 <img
                     alt={country.name.common}
                     className="flag"
                     src={country.flags.png}
                 />
-                <article className="country-details">
+                <article
+                    className={
+                        darkMode
+                            ? "country-details dark-text"
+                            : "country-details"
+                    }
+                >
                     <h2 className="country-name">{country.name.common}</h2>
                     <div className="main-details">
                         <p className="country-detail">

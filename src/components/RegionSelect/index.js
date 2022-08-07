@@ -4,7 +4,7 @@ import "./RegionSelect.css";
 import { Results } from "../Results/index";
 import { SearchCountry } from "../SearchCountry/index";
 import { CountrySkeleton } from "../CountrySkeleton";
-const RegionSelect = () => {
+const RegionSelect = ({ darkMode }) => {
     const regions = ["Africa", "America", "Asia", "Europe", "Oceania"];
     const [region, setRegion] = useState("");
     const [loading, setLoading] = useState(false);
@@ -52,10 +52,11 @@ const RegionSelect = () => {
         setLoading(false);
     }
     return (
-        <div className="country-options">
-            <SearchCountry setName={setName} />
+        <div className={darkMode ? "country-options dark" : "country-options"}>
+            <SearchCountry setName={setName} darkMode={darkMode} />
             <article className="region-container">
                 <select
+                    className={darkMode && "dark-light"}
                     title="regions"
                     name="regions"
                     onChange={(e) => {
@@ -93,7 +94,7 @@ const RegionSelect = () => {
                     </>
                 )}
                 {!loading && countries.length > 0 && (
-                    <Results countries={countries} />
+                    <Results darkMode={darkMode} countries={countries} />
                 )}
                 {!loading && countries.length === 0 && <p>No matches found</p>}
             </div>

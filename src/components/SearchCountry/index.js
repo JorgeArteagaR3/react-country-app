@@ -1,9 +1,13 @@
 import React from "react";
 import "./SearchCountry.css";
-const SearchCountry = ({ setName }) => {
+const SearchCountry = ({ setName, darkMode }) => {
     return (
         <article className="search-input-container">
-            <div className="search-input">
+            <div
+                className={
+                    darkMode ? "search-input dark-light" : "search-input"
+                }
+            >
                 <svg
                     viewBox="0 0 35 35"
                     fill="none"
@@ -24,6 +28,7 @@ const SearchCountry = ({ setName }) => {
                     }}
                     placeholder="Search for a country..."
                     type="text"
+                    className={darkMode && "dark-light"}
                 />
             </div>
         </article>

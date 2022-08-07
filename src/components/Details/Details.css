@@ -4,6 +4,9 @@
     align-items: center;
     justify-items: center;
     margin: 0 auto;
+    transition: 0.3s ease all;
+    padding-bottom: 35em;
+    overflow: hidden;
 }
 .country-info > p {
     font-size: 1.5rem;
@@ -97,10 +100,5 @@
     }
     .button-container {
         width: 900px;
-    }
-}
-@media only screen and (min-width: 1024px) {
-    .button-container {
-        width: 80% !important;
     }
 }

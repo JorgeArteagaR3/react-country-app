@@ -1,10 +1,14 @@
 .button-container {
-    width: 350px;
-    margin: 1em auto;
-    margin-bottom: 2em;
+    width: 100%;
+    margin: 0 auto;
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 1em;
+    transition: 0.3s ease all;
 }
 .button-container > button {
     background: var(--white-elements);
@@ -15,9 +19,21 @@
     box-shadow: 0px 6px 7px -3px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     font-weight: 600;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 .button-container > button > svg {
     position: absolute;
     width: 15px;
     left: 12px;
+}
+
+@media only screen and (min-width: 1024px) {
+    .button-container {
+        padding-left: 2em;
+    }
+    .button-container > button {
+        margin-left: 5em;
+    }
 }

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
 :root {
     --dark-mode-element: hsl(209, 23%, 22%);
     --dark-mode-background: hsl(207, 26%, 17%);
@@ -6,7 +8,6 @@
     --light-mode-background: hsl(0, 0%, 98%);
     --white-elements: hsl(0, 0%, 100%);
 }
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
 * {
     padding: 0;
     margin: 0;
@@ -14,11 +15,10 @@
     font-family: "Nunito Sans", sans-serif;
 }
 html {
-    background: var(--light-mode-background);
-
     font-family: "Nunito Sans", sans-serif;
     font-size: 62.5%;
 }
+
 header {
     display: flex;
     justify-content: space-between;
@@ -27,13 +27,27 @@ header {
     align-items: center;
     width: 100%;
     background-color: var(--white-elements);
-    margin-bottom: 2em;
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease all;
 }
+
 .country-options {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-top: 2em;
+    background: var(--light-mode-background);
+    transition: 0.3s ease all;
+}
+.dark {
+    background: var(--dark-mode-background) !important;
+}
+.dark-light {
+    background-color: var(--dark-mode-element) !important;
+    color: var(--white-elements);
+}
+.dark-text {
+    color: var(--white-elements);
 }
 @keyframes loadingskeleton {
     0% {

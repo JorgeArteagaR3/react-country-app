@@ -2,7 +2,6 @@
     display: flex;
     cursor: pointer;
     text-decoration: none;
-    color: var(--light-mode-text);
 }
 .dark-mode-container > svg {
     width: 14px;
